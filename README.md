@@ -86,18 +86,79 @@ print(confusionMatrix(rftraining, train_data$classe))
 
 ```
 
-![P3](Confusion Matrix.png)
+   Confusion Matrix and Statistics
+   
+              Reference
+    Prediction    A    B    C    D    E
+            A 5580    2    0    0    0
+            B    0 3795    2    0    0
+            C    0    0 3420    6    1
+            D    0    0    0 3210    3
+            E    0    0    0    0 3603
+   
+  Overall Statistics
+                                             
+                  Accuracy : 0.9993          
+                    95% CI : (0.9988, 0.9996)
+       No Information Rate : 0.2844          
+       P-Value [Acc > NIR] : < 2.2e-16       
+                                             
+                     Kappa : 0.9991          
+    Mcnemar's Test P-Value : NA              
+   
+   Statistics by Class:
+   
+                        Class: A Class: B Class: C Class: D Class: E
+   Sensitivity            1.0000   0.9995   0.9994   0.9981   0.9989
+   Specificity            0.9999   0.9999   0.9996   0.9998   1.0000
+   Pos Pred Value         0.9996   0.9995   0.9980   0.9991   1.0000
+   Neg Pred Value         1.0000   0.9999   0.9999   0.9996   0.9998
+   Prevalence             0.2844   0.1935   0.1744   0.1639   0.1838
+   Detection Rate         0.2844   0.1934   0.1743   0.1636   0.1836
+   Detection Prevalence   0.2845   0.1935   0.1747   0.1637   0.1836
+  Balanced Accuracy      0.9999   0.9997   0.9995   0.9990   0.9994
 
 Model performed well. Let's cross validate
 
-## Validate set accuracy
+  Validate set accuracy
 ```{r}
 rfvalidation = predict(rfModel, validate_final)
 print(confusionMatrix(rfvalidation, validate_final$classe))
 
 ```
 
-![P4](confusion matrix2.png)
+   Confusion Matrix and Statistics
+   
+             Reference
+    Prediction    A    B    C    D    E
+            A 1116    2    0    0    0
+            B    0  757    2    0    0
+            C    0    0  682    6    1
+            D    0    0    0  637    3
+            E    0    0    0    0  717
+   
+   
+   Overall Statistics
+                                           
+                  Accuracy : 0.9964        
+                    95% CI : (0.994, 0.998)
+       No Information Rate : 0.2845        
+       P-Value [Acc > NIR] : < 2.2e-16     
+                                           
+                     Kappa : 0.9955        
+    Mcnemar's Test P-Value : NA            
+   
+   Statistics by Class:
+   
+                        Class: A Class: B Class: C Class: D Class: E
+    Sensitivity            1.0000   0.9974   0.9971   0.9907   0.9945
+    Specificity            0.9993   0.9994   0.9978   0.9991   1.0000
+    Pos Pred Value         0.9982   0.9974   0.9898   0.9953   1.0000
+    Neg Pred Value         1.0000   0.9994   0.9994   0.9982   0.9988
+    Prevalence             0.2845   0.1935   0.1744   0.1639   0.1838
+    Detection Rate         0.2845   0.1930   0.1738   0.1624   0.1828
+    Detection Prevalence   0.2850   0.1935   0.1756   0.1631   0.1828
+    Balanced Accuracy      0.9996   0.9984   0.9975   0.9949   0.9972
 
 
 The cross validation accuracy is 99.77%, which makes out of sample error 0.23%. The model is good.
