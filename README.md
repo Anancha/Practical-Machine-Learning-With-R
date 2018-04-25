@@ -109,14 +109,14 @@ print(confusionMatrix(rftraining, train_data$classe))
    Statistics by Class:
    
                         Class: A Class: B Class: C Class: D Class: E
-   Sensitivity            1.0000   0.9995   0.9994   0.9981   0.9989
-   Specificity            0.9999   0.9999   0.9996   0.9998   1.0000
-   Pos Pred Value         0.9996   0.9995   0.9980   0.9991   1.0000
-   Neg Pred Value         1.0000   0.9999   0.9999   0.9996   0.9998
-   Prevalence             0.2844   0.1935   0.1744   0.1639   0.1838
-   Detection Rate         0.2844   0.1934   0.1743   0.1636   0.1836
-   Detection Prevalence   0.2845   0.1935   0.1747   0.1637   0.1836
-  Balanced Accuracy      0.9999   0.9997   0.9995   0.9990   0.9994
+    Sensitivity            1.0000   0.9995   0.9994   0.9981   0.9989
+    Specificity            0.9999   0.9999   0.9996   0.9998   1.0000
+    Pos Pred Value         0.9996   0.9995   0.9980   0.9991   1.0000
+    Neg Pred Value         1.0000   0.9999   0.9999   0.9996   0.9998
+    Prevalence             0.2844   0.1935   0.1744   0.1639   0.1838
+    Detection Rate         0.2844   0.1934   0.1743   0.1636   0.1836
+    Detection Prevalence   0.2845   0.1935   0.1747   0.1637   0.1836
+    Balanced Accuracy      0.9999   0.9997   0.9995   0.9990   0.9994
 
 Model performed well. Let's cross validate
 
