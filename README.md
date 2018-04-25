@@ -35,6 +35,10 @@ dim(train_data)
 table(train_data$classe)
 ```
 
+![P1](dim(train_data).jpeg)
+
+![P2](table(train_data).jpeg)
+
 train/test - we want to clean up near zero variance features,  missing data and the useless information 
 ```{r}
 T_na = apply(test_data, 2, function(x) sum(x %in% c(NA, "")))
@@ -65,6 +69,7 @@ train_final = train_data[Training, ]
 validate_final = train_data[-Training, ]
 ```
 
+
 ## Training the Model
 We will use random forest classifier to predict the action class. To measure the accuracy of the model, we do 10-fold cross validation with 80:20 split, on each fold, 80% of the data is used for training the random forest and remaining 20% is used for testing. See above for the splitting of data
 
@@ -80,6 +85,9 @@ rftraining = predict(rfModel, train_data)
 print(confusionMatrix(rftraining, train_data$classe))
 
 ```
+
+![P3](Confusion Matrix.png)
+
 Model performed well. Let's cross validate
 
 ## Validate set accuracy
@@ -88,6 +96,10 @@ rfvalidation = predict(rfModel, validate_final)
 print(confusionMatrix(rfvalidation, validate_final$classe))
 
 ```
+
+![P4](confusion matrix2.png)
+
+
 The cross validation accuracy is 99.77%, which makes out of sample error 0.23%. The model is good.
 
 ## Prediction
@@ -96,3 +108,5 @@ results = predict(rfModel,
                    test_data[, -length(names(test_data))])
 results
 ```
+![P5](Predict.jpeg)
+
